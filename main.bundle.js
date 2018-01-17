@@ -176,7 +176,6 @@ var Intro = (function () {
         document.onmousemove = function (ev) {
             mouseX = ev.pageX - canvas.offsetLeft;
             mouseY = ev.pageY - canvas.offsetTop;
-            console.log(mouseY);
             if (window.requestAnimationFrame) {
                 requestAnimationFrame(update);
             }
@@ -187,7 +186,6 @@ var Intro = (function () {
         function deviceOrientationListener(event) {
             mouseX = event.gamma * 8 - canvas.offsetLeft;
             mouseY = event.beta * 8 - canvas.offsetTop;
-            console.log(mouseY);
             if (window.requestAnimationFrame) {
                 requestAnimationFrame(update);
             }
@@ -330,6 +328,21 @@ var MainContent = (function () {
                 });
             });
         });
+        var consoleStyle = [
+            'background: linear-gradient(#000000, #aeaeae)',
+            'border: 1px solid #3E0E02',
+            'color: white',
+            'display: block',
+            'text-shadow: 0 1px 0 rgba(0, 0, 0, 0.3)',
+            'box-shadow: 0 1px 0 rgba(255, 255, 255, 0.4) inset, 0 5px 3px -5px rgba(0, 0, 0, 0.5), 0 -13px 5px -10px rgba(255, 255, 255, 0.4) inset',
+            'line-height: 100px',
+            'text-align: center',
+            'font-weight: bold',
+            'font-size: 100px',
+            'font-family: cursive'
+        ].join(';');
+        console.clear();
+        console.log('%c Robinson Manonmani ', consoleStyle);
     };
     MainContent.prototype.titleIn = function (title) {
         this[title] = this.titleValues[title + 'In'];
